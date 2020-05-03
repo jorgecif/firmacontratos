@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Blockchain security</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- jS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>    
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-animate.min.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				
+				<div >
+					<a href="https://quidlab.co" target="_blank"><img src="images/logo.png" alt="Quidlab logo"/></a>
+
+				</div>
+			</header>
+
+<!-- Panel Top #05 -->
+
+			<nav class="panel top">
+
+				<div class="sections desktop">
+					<div class="left"><a href="#" title="Slides Framework"><svg style="width:82px;height:24px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+					<div class="center">
+						<ul class="menu">
+							<li><a href="verificar.html">Verificar</a></li>
+							<li><a href="crear.html">Crear contrato</a></li>
+							<li><a href="#">Firmar contrato</a></li>
+							<li><a href="#">Buscar contrato</a></li>
+						  </ul>
+					</div>
+				  <div class="right"><a class="button pink gradient" href="index.html">Salir</a></div>
+				</div>
+				<div class="sections compact hidden">
+				  <div class="left"><a href="#" title="Slides Framework"><svg style="width:82px;height:24px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+				  <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span</div>
+				</div>
+			  </nav>
+			
+<!-- Formulario de creación de contrato -->	
+<section id="secao1">
+    <form name="form1" id="form1" method="post" action="" id="formulario2"> 
+    <div class="box2"> 
+        <h1>Crear un contrato</h1>
+        <label>
+          <h3>Nombre del contrato</h3>
+          <input type="text" class="input_text" name="nome" id="nome" required="required" placeholder="Nome"/> 
+          </label> 
+        <label>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+            <h1>Crear un contrato</h1>
+            <label>
+              <h3>Nombre del contrato</h3>
+              <input type="text" class="input_text" name="nome" id="nome" required="required" placeholder="Nome"/> 
+              </label> 
+            <label>
+         <h3>Objeto</h3>
+          <input type="text" placeholder="Objeto" class="input_text" name="assunto" id="assunto"/> 
+          </label> 
+
+         <label> 
+            <h3>Descripción</h3>
+            <textarea name="textarea" rows="50" cols="50" class="input_text">Agrega la descripción del contrato</textarea>
+          </label>
+          <label>
+            <h3>Archivo</h3>
+            <input type="file" placeholder="Archivo" class="input_text" name="assunto" id="input1"/>
+            <input type="button" value="Registrar" onclick="f1()"/> 
+            </label> 
+
+			<span id="hash-1">Huella registrada:</span>
+
+        <label>
+            <h3>Agregar las personas</h3>
+         </label>
+
+    <div class="row" ng-app="lists">
+        <div class="container" ng-controller="PatientController">
+            <div class="row">
+                <p style="font-style:italic">Clic en el nombre para mostrar información</h4>
+                <div>
+                    <div ng-repeat="alert in alerts" class="alert alert-warning alert-dismissible" role="alert">{{alert.msg}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6" style="min-height: 180px">
+                    <h3>Lista de personas</h3>
+                    <span ng-show="patientList.length == 0">No hay personas para mostrar!</span>
+                    <table class="table table-bordered table-striped" style="width: 300px; cursor: pointer">
+                        <tr ng-repeat="patient in patientList" class="patient">
+                            <td ng-click="showPatientDetails(patient)">{{patient.lastname}}, {{patient.name}} </td>
+                            <td> <a ng-click="deletePatient($index)">
+                                <span class="glyphicon glyphicon-remove"></span></a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div ng-cloak class="col-sm-6 patient-show-hide" ng-show="patientSelected != undefined">
+                    <h3>Detalles</h3>
+                    <table class="table table-bordered table-striped" style="width: 300px">
+                        <tr>
+                            <td><h3>{{patientDisplayed.lastname}}, {{patientDisplayed.name}}</h3></td>
+                        </tr>
+                        <tr>
+                            <td>Fecha de nacimiento: {{patientDisplayed.birthdate}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Registrar parte</h3>
+                    <div class="input-group">
+                        <input class="form-control" ng-model="newPatient.name" placeholder="First name"/>
+                    </div>
+                    <div class="input-group">
+                        <input class="form-control" ng-model="newPatient.lastname" placeholder="Last name"/>
+                    </div>
+                    <div class="input-group">
+                        <input class="form-control" ng-model="newPatient.birthdate" placeholder="Birthdate (optional)"/>
+                    </div>
+                    <button ng-click="addPatient()" class="btn btn-success">Agregar persona</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <input type="submit" class="button alinhar" value="Enviar" name="enviar" /> 
+    </div> 
+
+    </form> 
+</section> 
+
+
+
+
+
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Quidlab.</li><li>Todos los derechos reservados</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+            <script src="assets/js/add.js"></script>
+
+            <script>
+            var app = angular.module('lists', ['ngAnimate']);
+
+            app.controller('PatientController', function($scope, $timeout, alertService) {
+                    $scope.newPatient = new Object();
+            
+                    $scope.patientList = [
+                        {name : "Shirley",
+                         lastname: "Temple",
+                         birthdate: "23-04-1928"},
+                        {name : "Barbara",
+                         lastname: "Stanwick",
+                         birthdate: "16-07-1957"},
+                        {name : "Humphrey",
+                         lastname: "Bogart",
+                         birthdate: "25-12-1949"}
+                    ];
+                    
+                    $scope.patientSelected = undefined;
+                    $scope.addPatient = function (){
+                        if($scope.newPatient.name != undefined && $scope.newPatient.lastname != undefined) {
+                            $scope.patientList.push($scope.newPatient);
+                            $scope.newPatient = new Object();
+                            alertService.add("success", "Patient added!");
+                            $timeout(alertService.clear, 2500);
+                        }
+                    }
+            
+                    $scope.deletePatient = function (index){
+                        if(JSON.stringify($scope.patientList[index]) === JSON.stringify($scope.patientSelected)){
+                            $scope.patientSelected = undefined;
+                        }
+                        $scope.patientList.splice(index, 1);
+                    }
+            
+                    $scope.showPatientDetails = function(patient) {
+                        $scope.patientSelected = patient;
+                        $scope.patientDisplayed = patient;
+                    }
+                });
+            
+            app.factory('alertService', ['$rootScope', function ($rootScope) {
+                    var alertService;
+                    $rootScope.alerts = [];
+                    return alertService = {
+                        add: function(type, msg) {
+                            return $rootScope.alerts.push({
+                                type: type,
+                                msg: msg,
+                                close: function() {
+                                    return alertService.closeAlert(this);
+                                }
+                            });
+                        },
+                        closeAlert: function() {
+                            return $rootScope.alerts.splice(0, 1)
+                        },
+                        clear: function(){
+                            $rootScope.alerts = [];
+                        }
+                    };
+                }]);
+
+                </script>
+
+
+
+
+
+
+
+
+<script>
+
+var archivo_hash;
+var archivo1 = false;
+				
+async function digestMessage(message) {
+  const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           // hash the message
+  const hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+  return hashHex;
+}
+
+async function f1(){
+	const selectedFile = document.getElementById('input1').files[0];
+	const digestHex = await digestMessage(selectedFile.lastModified);
+	console.log(selectedFile);
+	archivo_hash = digestHex;
+	archivo1 = true;
+	console.log('Archivo almacenado');
+	document.getElementById('hash-1').textContent = "Huella registrada: "+digestHex;
+	document.getElementById('mensaje').textContent = 'Resultado: Archivo registrado en Blockchain';	
+}
+
+async function f2(){
+	if(archivo1){
+		const selectedFile = document.getElementById('input2').files[0];
+		const digestHex = await digestMessage(selectedFile.lastModified);
+		if(digestHex == archivo_hash){
+			console.log('Es genuino');
+			document.getElementById('hash-2').textContent = "Huella a verificar: "+digestHex;
+			document.getElementById('mensaje').textContent ='Resultado: Archivo Genuino';
+		}else{
+			console.log('Ha sido alterado');
+			document.getElementById('hash-2').textContent = "Huella a verificar: "+digestHex;
+			document.getElementById('mensaje').textContent ='Resultado: El archivo fue alterado ! ';
+		}
+
+	}else{
+		console.log('no hay archivo registrado');
+		document.getElementById('mensaje').textContent = 'Reslutado: registra un archivo primero';
+	}
+
+}
+
+			</script>
+
+	</body>
+</html>

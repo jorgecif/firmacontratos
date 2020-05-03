@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Blockchain security</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				
+				<div >
+					<a href="https://quidlab.co" target="_blank"><img src="images/logo.png" alt="Quidlab logo"/></a>
+
+				</div>
+			
+				<div >
+
+                     <h1>Firma de contratos con Blockchain</h1>
+
+				</div>
+
+
+
+
+
+			</header>
+
+<!-- Panel Top #05 -->
+
+			<nav class="panel top">
+
+				<div class="sections desktop">
+					<div class="left"><a href="#" title="Slides Framework"><svg style="width:82px;height:24px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+					<div class="center">
+						<ul class="menu">
+							<li><a href="verificar.html">Verificar</a></li>
+							<li><a href="crear.html">Crear contrato</a></li>
+							<li><a href="#">Firmar contrato</a></li>
+							<li><a href="#">Buscar contrato</a></li>
+						  </ul>
+					</div>
+				  <div class="right"><a class="button pink gradient" href="index.html">Salir</a></div>
+				</div>
+				<div class="sections compact hidden">
+				  <div class="left"><a href="#" title="Slides Framework"><svg style="width:82px;height:24px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+				  <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span</div>
+				</div>
+			  </nav>
+			
+
+              
+
+  <!-- Verificar rostro -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">Verificación de identidad</h1>
+        <p class="lead">Verificación rápida de la identidad por medio de reconocimiento facial</p>
+			</div>
+		</div>
+		<div class="row justify-content-md-center">
+				<div class="col-lg-4 text-center">
+					<p><strong>Foto de verificación</strong></p>
+					<!-- Canvas For Uploaded Image -->
+					<canvas id="uploadCanvas" width="300"  height="300"></canvas>
+					<!-- Default Canvas Image -->
+					<img src="defaultupload.png" id="uploadedPhoto" alt="Default Upload Photo" />
+					<!-- Upload Image Input & Upload Photo Button -->
+					<input type="file" name="image-upload" accept="image/png, image/jpeg">
+					<button id="upload" type="button" class="btn btn-outline-primary btn-lg">Subir foto</button>
+				</div>
+			<div class="col-lg-4 text-center">
+				<p><strong>Video</strong></p>
+				<!-- Camera -->
+				<div class="camera-container">
+					<video id="video" width="100%" height="300" autoplay="true"></video>
+				</div>
+				<!-- Take Photo Button -->
+				<button id="capture" type="button" class="btn btn-outline-primary btn-lg">Tomar foto</button>
+			</div>
+			<div class="col-lg-4 text-center">
+				<p><strong>Foto capturada</strong></p>
+				<!-- Canvas For Capture Taken -->
+				<canvas id="captureCanvas" width="300"  height="300"></canvas>
+				<!-- Default Canvas Image -->
+				<img src="defaultphoto.png" id="capturedPhoto" alt="Default" />
+				<!-- Verify Photos Button -->
+				<button id="verify" type="button" class="btn btn-outline-success btn-lg">Verificar foto</button>
+			</div>	
+		</div>
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<!-- API Match Result & API Percentage Score -->
+				<h2 id="match" class="mt-5"></h2>
+				<p id="score" class="lead"></p>
+			</div>
+			<div class="col-lg-12 text-center">
+					<!-- Error & Warning Alerts -->
+					<div class="alert alert-danger" id="errorAlert"></div>
+					<div class="alert alert-warning" id="warningAlert"></div>
+			</div>
+	</div>              
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Quidlab.</li><li>Todos los derechos reservados</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/main.js"></script>
+
+
+	<!-- Verify JS -->
+	<script src="assets/js/verify.js"></script>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+<script>
+
+var archivo_hash;
+var archivo1 = false;
+				
+async function digestMessage(message) {
+  const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           // hash the message
+  const hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+  return hashHex;
+}
+
+async function f1(){
+	const selectedFile = document.getElementById('input1').files[0];
+	const digestHex = await digestMessage(selectedFile.lastModified);
+	console.log(selectedFile);
+	archivo_hash = digestHex;
+	archivo1 = true;
+	console.log('Archivo almacenado');
+	document.getElementById('hash-1').textContent = "Huella registrada: "+digestHex;
+	document.getElementById('mensaje').textContent = 'Resultado: Archivo registrado en Blockchain';	
+}
+
+async function f2(){
+	if(archivo1){
+		const selectedFile = document.getElementById('input2').files[0];
+		const digestHex = await digestMessage(selectedFile.lastModified);
+		if(digestHex == archivo_hash){
+			console.log('Es genuino');
+			document.getElementById('hash-2').textContent = "Huella a verificar: "+digestHex;
+			document.getElementById('mensaje').textContent ='Resultado: Archivo Genuino';
+		}else{
+			console.log('Ha sido alterado');
+			document.getElementById('hash-2').textContent = "Huella a verificar: "+digestHex;
+			document.getElementById('mensaje').textContent ='Resultado: El archivo fue alterado ! ';
+		}
+
+	}else{
+		console.log('no hay archivo registrado');
+		document.getElementById('mensaje').textContent = 'Reslutado: registra un archivo primero';
+	}
+
+}
+
+			</script>
+
+	</body>
+</html>

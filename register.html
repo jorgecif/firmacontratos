@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Blockchain security</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				
+				<div >
+					<a href="https://quidlab.co" target="_blank"><img src="images/logo.png" alt="Quidlab logo"/></a>
+
+				</div>
+			
+				<div >
+
+                     <h1>Firma de contratos con Blockchain</h1>
+
+				</div>
+
+
+
+
+
+			</header>
+
+
+
+<!-- Signup Form -->
+
+  <form  action="#" autocomplete="off">
+    <div>
+	<input type="email" class="email" name="user-email" placeholder="Email" val=""/>
+	<input type="password" class="password" name="user-password" placeholder="Password" val=""/>
+    <input type="password" class="password" name="confirm-password" placeholder="Confirm the password" val=""/>
+    </div>
+    <br>
+    <div class="container">
+        <div class="horizontal-center">
+            <a class="button blue gradient" href="menu.html">Regístrate</a>
+        </div>
+      </div>
+
+  </form>
+
+	
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Quidlab.</li><li>Todos los derechos reservados</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/main.js"></script>
+
+<script>
+
+var archivo_hash;
+var archivo1 = false;
+				
+async function digestMessage(message) {
+  const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           // hash the message
+  const hashArray = Array.from(new Uint8Array(hashBuffer));                     // convert buffer to byte array
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+  return hashHex;
+}
+
+async function f1(){
+	const selectedFile = document.getElementById('input1').files[0];
+	const digestHex = await digestMessage(selectedFile.lastModified);
+	console.log(selectedFile);
+	archivo_hash = digestHex;
+	archivo1 = true;
+	console.log('Archivo almacenado');
+	document.getElementById('hash-1').textContent = "Huella registrada: "+digestHex;
+	document.getElementById('mensaje').textContent = 'Resultado: Archivo registrado en Blockchain';	
+}
+
+async function f2(){
+	if(archivo1){
+		const selectedFile = document.getElementById('input2').files[0];
+		const digestHex = await digestMessage(selectedFile.lastModified);
+		if(digestHex == archivo_hash){
+			console.log('Es genuino');
+			document.getElementById('hash-2').textContent = "Huella a verificar: "+digestHex;
+			document.getElementById('mensaje').textContent ='Resultado: Archivo Genuino';
+		}else{
+			console.log('Ha sido alterado');
+			document.getElementById('hash-2').textContent = "Huella a verificar: "+digestHex;
+			document.getElementById('mensaje').textContent ='Resultado: El archivo fue alterado ! ';
+		}
+
+	}else{
+		console.log('no hay archivo registrado');
+		document.getElementById('mensaje').textContent = 'Reslutado: registra un archivo primero';
+	}
+
+}
+
+			</script>
+
+	</body>
+</html>
